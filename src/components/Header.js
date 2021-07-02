@@ -1,19 +1,27 @@
-import styled from "styled-components";
-import Brightness2OutlinedIcon from "@material-ui/icons/Brightness2Outlined";
+import styled from 'styled-components';
+import Brightness2OutlinedIcon from '@material-ui/icons/Brightness2Outlined';
 
 const Text = styled.p`
   font-size: 1.4rem;
   font-weight: 600;
+  padding: 0;
+  margin: 0;
 `;
 
 const ThemeToggle = styled.div`
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const MainTitle = styled.h1`
   font-size: 1.6rem;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const StyledHeader = styled.header`
