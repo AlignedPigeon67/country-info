@@ -5,6 +5,7 @@ const ListContainer = styled.main`
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  margin-bottom: 3rem;
 `;
 
 const CountryList = ({ countries }) => {
