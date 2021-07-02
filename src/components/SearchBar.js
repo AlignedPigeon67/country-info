@@ -17,8 +17,8 @@ const Input = styled.input.attrs(props => ({
   }
 `;
 
-const SubmitButton = styled.button.attrs(props => ({
-  type: props.type || 'submit',
+const Button = styled.button.attrs(props => ({
+  type: props.type || 'button',
 }))`
   background: transparent;
   border: none;
@@ -31,7 +31,7 @@ const SubmitButton = styled.button.attrs(props => ({
   }
 `;
 
-const SearchForm = styled.form`
+const SearchContainer = styled.div`
   background-color: white;
   width: 90%;
   height: 5rem;
@@ -48,14 +48,18 @@ const SearchForm = styled.form`
   }
 `;
 
-const SearchBar = () => {
+const SearchBar = ({ searchHandler }) => {
   return (
-    <SearchForm>
-      <SubmitButton>
+    <SearchContainer>
+      <Button>
         <SearchIcon fontSize="large" />
-      </SubmitButton>
-      <Input type="text" placeholder="Search for a country..." />
-    </SearchForm>
+      </Button>
+      <Input
+        type="text"
+        placeholder="Search for a country..."
+        onChange={searchHandler}
+      />
+    </SearchContainer>
   );
 };
 

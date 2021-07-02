@@ -8,12 +8,20 @@ const ListContainer = styled.main`
   margin-bottom: 3rem;
 `;
 
-const CountryList = ({ countries }) => {
+const CountryList = ({ countries, searchQuery }) => {
   return (
     <ListContainer>
-      {countries.map(country => (
-        <CountryItem country={country} />
-      ))}
+      {searchQuery.length < 1
+        ? countries.map(country => (
+            <CountryItem country={country} key={country.numericCode} />
+          ))
+        : countries
+            .filter(country =>
+              country.name.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .map(country => (
+              <CountryItem country={country} key={country.numericCode} />
+            ))}
     </ListContainer>
   );
 };

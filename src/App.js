@@ -7,6 +7,7 @@ import CountryList from './components/CountryList';
 function App() {
   const [allCountries, setAllCountries] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all')
@@ -22,12 +23,16 @@ function App() {
       );
   }, []);
 
+  const searchHandler = e => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className="App">
       <Header />
-      <SearchBar />
+      <SearchBar searchHandler={searchHandler} />
       {isLoaded ? (
-        <CountryList countries={allCountries} />
+        <CountryList countries={allCountries} searchQuery={searchQuery} />
       ) : (
         <div>Loading...</div>
       )}
