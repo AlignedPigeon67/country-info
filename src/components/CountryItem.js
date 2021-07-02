@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const InfoText = styled.p`
   font-size: 1.4rem;
+  margin: 0.4rem;
 `;
 
 const InfoTitle = styled.h3`
@@ -28,7 +29,7 @@ const Image = styled.img`
 
 const ListItem = styled.div`
   width: 265px;
-  height: 335px;
+  height: auto;
   background-color: white;
   display: grid;
   grid-template-rows: 160px auto;
@@ -43,13 +44,15 @@ const CountryItem = ({ country }) => {
         <InfoTitle>{country.name}</InfoTitle>
         <span>
           <InfoText>
-            <strong>Population:</strong> {country.population.toLocaleString()}
+            <span style={{ fontWeight: '600' }}>Population:</span>{' '}
+            {country.population.toLocaleString()}
           </InfoText>
           <InfoText>
-            <strong>Region:</strong> {country.region}
+            <span style={{ fontWeight: '600' }}>Region:</span> {country.region}
           </InfoText>
           <InfoText>
-            <strong>Capital:</strong> {country.capital}
+            <span style={{ fontWeight: '600' }}>Capital:</span>{' '}
+            {country.capital}
           </InfoText>
         </span>
       </InfoContainer>
