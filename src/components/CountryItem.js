@@ -12,16 +12,16 @@ const InfoTitle = styled.h3`
 const InfoContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 const Image = styled.img`
-  /* object-fit: contain; */
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
+  width: inherit;
+  height: 160px;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 `;

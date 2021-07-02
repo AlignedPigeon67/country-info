@@ -4,12 +4,15 @@ import CountryItem from './CountryItem';
 const ListContainer = styled.main`
   display: flex;
   flex-direction: column;
+  gap: 4rem;
 `;
 
-const CountryList = props => {
+const CountryList = ({ countries }) => {
   return (
     <ListContainer>
-      <CountryItem country={props.countries[0]} />
+      {countries.map(country => (
+        <CountryItem country={country} />
+      ))}
     </ListContainer>
   );
 };
