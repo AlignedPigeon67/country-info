@@ -44,6 +44,7 @@ const SearchForm = styled.form`
   padding: 0 3rem;
   @media (min-width: 500px) {
     width: 450px;
+    align-self: start;
   }
 `;
 
