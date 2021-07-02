@@ -7,7 +7,7 @@ const Input = styled.input.attrs(props => ({
 }))`
   background: transparent;
   border: none;
-  width: 90%;
+  width: 100%;
   height: 80%;
   opacity: 0.5;
   &:focus {
@@ -42,6 +42,9 @@ const SearchForm = styled.form`
   border-radius: 0.5rem;
   box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.05);
   padding: 0 3rem;
+  @media (min-width: 500px) {
+    width: 450px;
+  }
 `;
 
 const SearchBar = () => {
